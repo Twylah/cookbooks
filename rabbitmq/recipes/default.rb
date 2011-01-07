@@ -23,11 +23,11 @@ end
 
 service "rabbitmq-server" do
   supports :status => true, :restart => true, :reload => true
-  action [ :enable, :start ]
+  action :enable
 end
 
-template "/etc/rabbitmq/rabbitmq.config" do
-  source "rabbitmq.config.erb"
+template "/etc/rabbitmq/rabbitmq.conf" do
+  source "rabbitmq.conf.erb"
   owner "root"
   group "root"
   mode 0644
